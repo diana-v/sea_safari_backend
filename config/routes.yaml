@@ -1,3 +1,14 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+app_lucky_number:
+  path: /lucky/number
+  controller: App\Controller\LuckyController::number
+
+contact_form_submit:
+  path: /submit_form/contact
+  controller: App\Controller\ContactController::submit
+
+reservation_submit:
+  path: /submit_form/reservation
+  controller: App\Controller\ReservationController::submit
