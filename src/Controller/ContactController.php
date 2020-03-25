@@ -12,7 +12,6 @@ class ContactController extends AbstractController
 {
     public function submit(\Swift_Mailer $mailer, Request $request)
     {
-
         $contact = new Contact();
 
         $form = $this->createForm(ContactType::class, $contact);
@@ -20,9 +19,7 @@ class ContactController extends AbstractController
         $form->submit($data);
 
         if ($form->isSubmitted() && !$form->isValid()) {
-            return new Response(
-                $form->getErrors(true, false)
-            );
+            return new Response($form->getErrors(true, false), 400);
         }
 
         $email_form = (new \Swift_Message('Nauja žinutė iš: ' . $data['name'] ))
@@ -46,7 +43,8 @@ class ContactController extends AbstractController
             );
 
         $mailer->send($email_form);
-
-        return new Response(json_encode($mailer));
+        return new Response('Success', 200, [
+            'Access-Control-Allow-Origin' => '*'
+        ]);
     }
 }
