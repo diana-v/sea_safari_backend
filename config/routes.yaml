@@ -6,7 +6,7 @@ app_lucky_number:
   controller: App\Controller\LuckyController::number
 
 contact_form_submit:
-  path: /submit_form/contact
+  path: /api/submit_form/contact
   controller: App\Controller\ContactController::submit
 
 reservation_submit:
