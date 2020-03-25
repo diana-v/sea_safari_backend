@@ -26,8 +26,8 @@ class ContactController extends AbstractController
         }
 
         $email_form = (new \Swift_Message('Nauja žinutė iš: ' . $data['name'] ))
-            ->setFrom('e0lt.mailer@gmail.com')
-            ->setTo('e0lt.mailer@gmail.com')
+            ->setFrom($_ENV['MAILER_FROM'])
+            ->setTo($_ENV['MAILER_TO'])
             ->setBody(
                 $this->renderView(
                 // templates/emails/registration.html.twig
