@@ -7,5 +7,5 @@ contact_form_submit:
   controller: App\Controller\ContactController::submit
 
 reservation_submit:
-  path: /submit_form/reservation
+  path: /api/submit_form/reservation
   controller: App\Controller\ReservationController::submit
