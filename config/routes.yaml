@@ -1,9 +1,6 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
-app_lucky_number:
-  path: /lucky/number
-  controller: App\Controller\LuckyController::number
 
 contact_form_submit:
   path: /api/submit_form/contact
